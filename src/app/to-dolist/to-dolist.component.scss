@@ -1,0 +1,35 @@
+
+    .form-field {
+        padding-top: 20px;
+      label
+      {
+        padding-bottom: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .createUpdate
+      {
+        border:none;
+        border-radius: 10px;
+        padding:10px 20px;
+      }
+    }
+   
+
+table {
+    tr {
+        margin: 20px;
+        border: 2px solid rgb(146, 109, 109);
+        th {
+            padding: 20px;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            border: 2px solid rgb(146, 109, 109);
+        }
+        td {
+            padding: 10px 10px 10px 20px;
+            font-size: 17px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid rgb(142, 80, 80);
+        }
+    }
+}

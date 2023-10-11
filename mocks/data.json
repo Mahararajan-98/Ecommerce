@@ -1,0 +1,60 @@
+{
+  "productList": [
+    {
+      "productName": "TV",
+      "productPrice": "25000",
+      "description": "Smart android tv",
+      "quantity": "1",
+      "id": 403466
+    },
+    {
+      "productName": "Computer",
+      "productPrice": "12999",
+      "description": "New Flexible display Computer",
+      "quantity": "3",
+      "id": 200637
+    },
+    {
+      "productName": "Mobile",
+      "productPrice": "1999",
+      "description": "Brand new mobile vivo y21",
+      "quantity": "3",
+      "id": 544684
+    },
+    {
+      "productName": "Mobile",
+      "productPrice": "2000",
+      "description": "Vivo v19 pro",
+      "quantity": "2",
+      "id": 956446
+    },
+    {
+      "productName": "Redmi",
+      "productPrice": "25000",
+      "description": "New Product",
+      "quantity": "1",
+      "id": 956447
+    },
+    {
+      "productName": "Mobile",
+      "productPrice": "20000",
+      "description": "Brand New",
+      "quantity": "1",
+      "id": 956448
+    },
+    {
+      "productName": "Samsung TV",
+      "productPrice": "15000",
+      "description": "Brand new tv",
+      "quantity": "2",
+      "id": 956449
+    },
+    {
+      "productName": "TV",
+      "productPrice": "18000",
+      "description": "Smart android tv",
+      "quantity": "2",
+      "id": 956451
+    }
+  ]
+}

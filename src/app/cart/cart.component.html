@@ -1,0 +1,93 @@
+<ng-container *ngIf="product.length!=0">
+    <div class="header-bg">
+        <div class="container">
+            <div class="row product-title">
+                <div class="col-lg-1">
+                    <h5>Check</h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5>ProductName</h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Image</h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Description</h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Quantity</h5>
+                </div>
+                <div class="col-lg-1">
+                    <h5>Price</h5>
+                </div>
+                <div class="col-lg-1">
+                    <h5>SubTotal</h5>
+                </div>
+                <div class="col-lg-1 ps-5">
+                    <h5>Action</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row product-Details" *ngFor="let item of product; let i as index">
+            <div class="col-lg-1 ps-5">
+                <input type="checkbox" class="form-check-input" [checked]="item.select" [value]="item.id" (change)="checkboxStatus($event)">
+            </div>
+            <div class="col-lg-2 ps-5">
+                <h6>{{item.productName}}</h6>
+            </div>
+            <div class="col-lg-2">
+                <img src="{{item.productImage}}" alt="">
+            </div>
+            <div class="col-lg-2">
+                <p>{{item.description}}</p>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn" (click)="subQuantity(item.id,item.quantity,item)"><i class="bi bi-dash-circle-fill"></i></button>{{item.quantity}}
+                <button class="btn" (click)="addQuantity(item.id,item.quantity)"><i class="bi bi-plus-circle-fill"></i></button>
+            </div>
+            <div class="col-lg-1 ">
+                <p>{{item.productPrice}}</p>
+            </div>
+            <div class="col-lg-1 ">
+                <h5>{{item.quantity*item.productPrice | number}}</h5>
+            </div>
+            <div class="col-lg-1 ps-4">
+                <h5><button class="btn btn-danger" (click)="removeItem(item)"><i class="bi bi-trash3"></i></button></h5>
+            </div>
+
+        </div>
+
+        <div class="row mt-5 page-action">
+            <div class="col-lg-2 offset-lg-3 ">
+                <button class="btn btn-warning " routerLink="/product">Shop More</button>
+            </div>
+            <div class="col-lg-2 ">
+                <button class="btn btn-danger " (click)="emptyCart() ">Empty Cart</button>
+            </div>
+            <div class="col-lg-2 ">
+                <button class="btn btn-danger " routerLink="/checkout">Check Out</button>
+            </div>
+            <div class="col-lg-2 ps-5 ">
+                <h6> <strong>Grand Total: {{totalAmount}}</strong></h6>
+            </div>
+        </div>
+
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="product.length==0 ">
+    <div class="container ">
+        <div class="card text-center ">
+            <div class="cart-text ">
+                <h6>Your cart is empty</h6>
+            </div>
+            <div class="img-top ">
+                <img src="../../assets/img/emptycart.jpg " alt=" " class="img-fluid ">
+            </div>
+            <button class="btn btn-primary w-50 " routerLink="/product">Shop now</button>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h4 class="text-primary mt-3">Create Product</h4>
+            <form action="" class="form-group" #productData="ngForm" (ngSubmit)="createProduct(productData.value)">
+                <div class="form-field">
+                    <label for="">ProductName</label><input type="text" placeholder="" class="form-control" name="productName" ngModel>
+
+                </div>
+                <br>
+                <div class="form-field">
+                    <label for="">ProductPrice</label><input type="text" placeholder="" class="form-control" name="productPrice" ngModel>
+                </div>
+                <br>
+                <div class="form-field">
+                    <label for="">Description</label><input type="text-area" placeholder="" class="form-control" name="description" ngModel>
+                </div>
+                <br>
+                <div class="form-field">
+                    <label for="">Quantity</label><input type="text" class="form-control" name="quantity" ngModel>
+                </div>
+                <br>
+                <div class="form-field  ">
+                    <input type="submit" value="{{isEdited ? 'Update Product' : 'Create Product'}}" class="bg-primary text-white p-2 createUpdate">
+                </div>
+                <br>
+            </form>
+        </div>
+        <div class="col-lg-8">
+            <h4 class="ps-5 text-primary mt-3">All Products</h4>
+            <table class="mt-5">
+                <tr>
+                    <th>PName</th>
+                    <th>Price</th>
+                    <th>Desc</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let item of productList" >
+                    <td>{{item.productName}}</td>
+                    <td>{{item.productPrice}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td><button class="btn btn-primary" (click)="updateProduct(item.id)">Edit</button>
+                    <button class="btn btn-danger ms-3" (click)="deleteProduct(item.id)">Delete</button></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+</div>

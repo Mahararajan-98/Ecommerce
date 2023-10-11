@@ -1,0 +1,53 @@
+.header-bg {
+    background-color: #393535fb;
+    .product-title {
+        padding: 30px;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+.product-Details {
+    margin-top: 3%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    .form-check-input {
+        border-radius: 0.25em;
+        border: 3px solid black;
+        &:checked {
+            border: none;
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    img {
+        height: 150px;
+        width: 205px;
+    }
+    h6 {
+        font-size: 20px;
+    }
+}
+
+.page-action {
+    font-family: 'Dosis', sans-serif;
+    button {
+        font-size: 20px;
+    }
+    h6 {
+        font-size: 20px;
+    }
+}
+
+.card {
+    width: 40%;
+    margin: 50px auto;
+    padding: 50px;
+    --bs-card-border-color: none;
+    button {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}

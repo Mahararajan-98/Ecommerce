@@ -1,0 +1,62 @@
+<ng-container *ngIf="checkoutProduct.length!=0">
+    <div class="container">
+
+        <div class="page-title">
+            <h2>CheckOut </h2>
+        </div>
+
+        <div class="row mt-5 heading">
+            <div class="col-lg-3">
+                <h6>Image</h6>
+            </div>
+            <div class="col-lg-3">
+                <h6>Description</h6>
+            </div>
+            <div class="col-lg-2">
+                <h6>Quantity</h6>
+            </div>
+            <div class="col-lg-2">
+                <h6>Price</h6>
+            </div>
+            <div class="col-lg-2">
+                <h6>SubTotal</h6>
+            </div>
+        </div>
+        <div class="amount-details card float-end">
+            <h6>Orderdetails</h6>
+            <h6>TotalAmount:<br><strong> {{totalAmount}}</strong>Rs</h6>
+            <!-- <button class="btn btn-warning ms-2">proceed to Buy</button> -->
+        </div>
+
+
+        <div class="row checkout-List mt-5" *ngFor="let item of checkoutProduct">
+
+            <div class="col-lg-3">
+                <img src="{{item.productImage}}" alt="">
+            </div>
+            <div class="col-lg-3">
+                <p>{{item.description}}</p>
+            </div>
+            <div class="col-lg-2">
+                <p><strong>{{item.quantity}}</strong></p>
+            </div>
+            <div class="col-lg-2">
+                <p><strong>{{item.productPrice}}</strong></p>
+            </div>
+            <div class="col-lg-2">
+                <p><strong>{{item.quantity * item.productPrice}}</strong></p>
+            </div>
+
+        </div>
+
+
+        <button class="btn btn-success  mt-5" routerLink="/cart">Back to Cart</button>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="checkoutProduct.length==0">
+    <div class="container">
+        <h4>Your checkout is Empty.</h4>
+        <button class="btn btn-info" routerLink="/product">Back to Shop</button>
+    </div>
+</ng-container>

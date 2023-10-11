@@ -1,0 +1,38 @@
+<section class="login">
+    <div class="container ">
+
+        <form class="form-group" [formGroup]='form' (ngSubmit)="onSubmit()">
+
+            <div class="form-field ">
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="Enter Email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && form.controls['email'].errors }">
+                <div *ngIf="submitted && form.controls['email'].errors" class="invalid-feedback">
+                    <div *ngIf="form.controls['email'].errors['required']">Email is required</div>
+                    <div *ngIf="form.controls['email'].errors['email']">Email is invalid</div>
+                </div>
+            </div>
+            <div class="form-field mt-3">
+                <label for="">Password</label>
+
+                <input type="password" placeholder="Enter Password" name="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && form.controls['password'].errors }">
+                <div *ngIf="submitted && form.controls['password'].errors" class="invalid-feedback">
+                    <div *ngIf="form.controls['password'].errors['required']">Password is required</div>
+                    <div *ngIf="form.controls['password'].errors['minlength']">
+                        Password must be at least 8 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-button">
+                    <button type="submit" class="mt-4" (click)="formSubmit()" 
+                    >Login</button>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+</section>

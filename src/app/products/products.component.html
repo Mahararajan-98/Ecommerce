@@ -1,0 +1,30 @@
+<div class="header d-flex justify-content-around">
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="Search products here" [(ngModel)]="searchProducts">
+    </div>
+    <div class="cart-icon">
+        <button routerLink="/cart" class="btn btn-danger"><i class="bi bi-cart3"></i>{{totalCartItem}}</button>
+    </div>
+</div>
+
+<div class="container mt-5">
+
+
+    <div class="row mt-5">
+
+        <div class="col-lg-3 mt-5" *ngFor="let item of parseData | filter:searchProducts">
+
+            <div class=" card product-card ">
+                <!-- {{i+1}} -->
+                <img src={{item.productImage}} class="card-img-top " alt="... ">
+                <div class="card-body ">
+                    <h5 class="card-title ">{{item.productName}}</h5>
+                    <p class="card-text ">{{item.description}}</p>
+                    <h5 class="card-title ">{{item.productPrice}}Rs</h5>
+                    <a href="#" class="btn btn-primary ">Buy</a>
+                    <button class="btn btn-warning ms-5" (click)="addtoCart(item)"> Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
